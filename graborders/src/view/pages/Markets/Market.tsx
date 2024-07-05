@@ -303,7 +303,7 @@ function Market() {
                   <img
                     src={item?.photo[0]?.downloadUrl}
                     alt=""
-                    style={{ width: 190 }}
+                    style={{ width: 190 , height:100 }}
                   />
                 )}
                 {!loadingImage && !item?.photo[0]?.downloadUrl && (

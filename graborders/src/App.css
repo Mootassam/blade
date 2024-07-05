@@ -2471,7 +2471,7 @@ button:disabled {
 }
 .modal__companyname {
   font-size: 18px;
-  color: white;
+  color: #15817b!important;
   font-weight: bold;
 }
 
