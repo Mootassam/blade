@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+:root {
+  --icon-width: 79px;
+  --icon-height: 79px;
+  --max-lines: 9;
+}
+
+img {
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.start__{ 
+  font-size: 54px !important;
+}
+
+
+body {
+  /* background-color: #EDF1F7; */
+  /* background-image: url("https://koozaimarketing.com/member/assets/images/bg-11.png"); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /* background-color: #f28712; */
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+}
+
+p {
+  color: rgb(161, 167, 187);
+}
+
+h1,
+h2,
+h3 {
+  color: #fff;
+}
+
+h3 {
+  line-height: 1.5 !important;
+  margin: 0px !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  padding-top: 5px;
+}
+
+.p__singledetail {
+  line-height: 1.5 !important;
+  margin: 8px 0px 0px !important;
+  color: rgb(161, 167, 187);
+  font-size: 14px !important;
+}
+
+hr {
+  margin: 15px 0;
+  background-color: #10346e !important;
+}
+

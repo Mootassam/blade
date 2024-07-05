@@ -1,0 +1,37 @@
+.app__company {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+}
+
+@media screen and (max-width :1100px ) {
+  .app__company { 
+    flex-direction: column;
+  }
+}
+
+.company__item {
+  padding: 100px 60px;
+  outline: 1px solid #000;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.company__item:hover {
+  background-color: cadetblue;
+  color: white;
+  outline: 0px;
+}
+.company__text {
+  font-size: 18px;
+  font-weight: 500;
+}
+.item__company {
+  font-size: 54px;
+}
+.remove__ligne {
+  text-decoration: none;
+}

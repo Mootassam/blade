@@ -1,0 +1,27 @@
+.search__page {
+  background-color: #fff !important;
+  height: 100dvh;
+  width: 100dvw;
+  padding-left: 0px !important;
+  margin: 0px !important;
+}
+
+.search__input {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.search {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  background-color: transparent;
+  color: #002358;
+}
+
+.search:focus {
+  outline: 0;
+}

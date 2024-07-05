@@ -1,0 +1,321 @@
+/* styling the page of the coin */
+.coin__menue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #2e3142;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.coin__menue > div {
+  padding: 14px;
+}
+.header__page {
+  display: flex;
+  background-color: #2e3142;
+  padding: 17px;
+  justify-content: space-between;
+  border-bottom: 1px #000 solid;
+}
+
+.coin__menue > div {
+  cursor: pointer;
+}
+/* Portfolio */
+
+.content__portfolio {
+}
+.portfolio__dashboard {
+  background-color: aquamarine;
+  width: 100%;
+
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px 5px;
+}
+
+.profile__firstlinge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.change,
+.loss {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio__options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+/* stlying the profile  */
+
+.app__profile {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.app__profile > h3 {
+  text-align: center;
+  font-size: 20px;
+  color: #b1b4c3;
+}
+
+.profile__box {
+  background-color: #b1b4c3;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 20px;
+}
+
+.account__circle {
+  background-color: antiquewhite;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.ligne__profile {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: 50px auto;
+  align-items: center;
+  gap: 23px;
+  padding-top: 18px;
+}
+
+.circle__detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.box__ligne {
+  border-bottom: 1.3px solid #ebebeb;
+  width: 87%;
+  align-self: flex-end;
+}
+
+.profile__logout {
+  display: flex;
+  align-items: center;
+  background-color: rgb(183, 27, 27);
+  margin-top: 15px;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 35px;
+  color: white;
+}
+
+/* stlying the explore page */
+
+.explore__title {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.explore__header {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background-color: aqua;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* styling the trading view  */
+
+.tradingview-widget-container {
+  height: 330px; /* Set a specific height as needed */
+  margin: 0 auto; /* Center the container */
+}
+
+/* news text */
+.news__p {
+  line-height: 1.5 !important;
+  margin: 8px 0px 0px !important;
+  color: rgb(161, 167, 187) !important;
+  font-size: 14px !important;
+}
+
+.news__h3 {
+  line-height: 1.5 !important;
+  margin: 0px !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  padding-top: 5px;
+}
+
+.news__h5 {
+  line-height: 1.5;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.news__item {
+  display: flex;
+  flex-direction: column;
+}
+.date__news {
+  font-size: 11px;
+  color: rgb(255, 255, 255);
+}
+
+.ligne__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.time__news {
+  line-height: 1.5;
+  margin: 0px;
+  color: #a1a7bb;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.news__today {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 80px;
+}
+
+.news__todatext {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(255, 255, 255) !important;
+}
+
+.item__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* styling the singleItem */
+.trading__h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(255, 255, 255) !important;
+}
+.small__detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding-top: 10px;
+}
+
+.text__aligndetail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.text__smalldetail {
+  color: rgb(118, 128, 143);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #fff;
+}
+
+.__smallspace {
+  padding-right: 5px;
+}
+
+/* styling the detaill explore */
+
+.singledetaill__subtitle {
+  border-left: 9px solid #aed651;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px 0 10px 15px;
+}
+
+/* styling the price detaill coin */
+.buysell {
+  display: flex;
+  background-color: #2e3142;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 15px;
+  justify-content: space-around;
+  gap: 15px;
+  margin: auto;
+}
+
+.buy,
+.sell {
+  padding: 15px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+}
+.buy {
+  background-color: #13b351;
+  width: 90%;
+}
+.sell {
+  background-color: #de3232;
+  width: 90%;
+}
+
+.box__detail {
+  background-color: #2e3142;
+  padding: 15px;
+}
+
+.coins__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pricedetaill {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.live {
+  width: max-content;
+  align-self: flex-end;
+  padding: 3px 9px;
+  border: 2px solid #2e3142;
+  font-size: 12px;
+}
+

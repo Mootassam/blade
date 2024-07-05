@@ -1,0 +1,45 @@
+version: "3.3"
+services:
+  backend:
+    build: ./server
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    volumes:
+      - upload:/upload
+    environment:
+      DATABASE_CONNECTION: mongodb://db/grap
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 2717:27017
+    restart: unless-stopped
+    volumes:
+      - phone:/data/db
+  web:
+    build: ./admin
+    ports:
+      - 3077:80
+    restart: unless-stopped
+    volumes:
+      - "./admin:/app"
+      - "/app/node_modules"
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  web1:
+    build: ./graborders
+    ports:
+      - 3015:80
+    restart: unless-stopped
+    volumes:
+      - "./graborders:/app"
+      - "/app/node_modules"
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+volumes:
+  phone:
+  upload:
