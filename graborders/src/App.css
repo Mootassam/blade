@@ -271,7 +271,7 @@ td {
   margin: auto;
   display: flex;
   overflow: hidden;
-  margin-top: 52px;
+  margin-top: 55px;
 }
 
 .image {
@@ -2196,7 +2196,9 @@ button:disabled {
 }
 
 .list__ofproduct {
- width: 100%;
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 19px;
 }
 
@@ -2206,6 +2208,7 @@ button:disabled {
 }
 
 .list__ofproduct > div {
+  height: 110px;
   background-image: radial-gradient(
     circle at 100% 0%,
     rgb(247, 236, 238) 0%,
@@ -2471,7 +2474,7 @@ button:disabled {
 }
 .modal__companyname {
   font-size: 18px;
-  color: #15817b!important;
+  color: #025450;
   font-weight: bold;
 }
 

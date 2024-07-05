@@ -130,10 +130,19 @@ function Market() {
       </div>
 
       <div className="advertise__header">
-
-      <video height="250px" autoPlay="autoplay" loop="loop" muted="muted" className="banner-block" style={{maxWidth: '100%'}}><source src="      https://video.wixstatic.com/video/599bbd_9d2463d3a1394515a8232e14e4eb09e3/1080p/mp4/file.mp4
-" type="video/mp4" /></video>         
-
+        <video
+          height="250px"
+          autoPlay="autoplay"
+          loop="loop"
+          muted="muted"
+          className="banner-block"
+          style={{ maxWidth: "100%" }}
+        >
+          <source
+            src="https://video.wixstatic.com/video/599bbd_9d2463d3a1394515a8232e14e4eb09e3/1080p/mp4/file.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
       <div className="home__section">
         <div className="advertise__speaker">
@@ -264,7 +273,7 @@ function Market() {
                   Level Limit: {selectedItem?.levellimit}
                 </div>
                 <div style={{ fontSize: 20 }}>
-                Data per set: {selectedItem?.dailyorder}
+                  Data per set: {selectedItem?.dailyorder}
                 </div>
                 <div style={{ fontSize: 20 }}>
                   Commission Rate: {selectedItem?.comisionrate}%
@@ -303,7 +312,7 @@ function Market() {
                   <img
                     src={item?.photo[0]?.downloadUrl}
                     alt=""
-                    style={{ width: 190 , height:100 }}
+                    style={{ width: 190, height: 100 }}
                   />
                 )}
                 {!loadingImage && !item?.photo[0]?.downloadUrl && (

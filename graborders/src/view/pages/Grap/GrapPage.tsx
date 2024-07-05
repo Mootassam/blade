@@ -201,13 +201,21 @@ const Grappage = () => {
           </div>
 
           <div className="grap__products">
-
-
-          <video height="240px" autoPlay="autoplay" loop="loop" muted="muted" className="banner-block" style={{maxWidth: '100%'}}><source src="/video/rot.mp4" type="video/mp4" /></video>         
             <div className="list__ofproduct">
-             
-
-
+              <div className="">
+                <img src={randomImage} alt="" />
+              </div>
+              <div className="">
+                <img src={randomImage1} alt="" />
+              </div>
+              <div className="">
+                <img src={randomImage2} alt="" />
+              </div>
+            </div>
+            <div className="list__ofproduct">
+              <div className="">
+                <img src={randomImage3} alt="" />
+              </div>
               <div className="">
                 {currentUser.grab ? (
                   <button
@@ -223,9 +231,21 @@ const Grappage = () => {
                   </button>
                 )}
               </div>
-           
+              <div className="">
+                <img src={randomImage4} alt="" />
+              </div>
             </div>
-     
+            <div className="list__ofproduct">
+              <div className="">
+                <img src={randomImage5} alt="" />
+              </div>
+              <div className="">
+                <img src={randomImage6} alt="" />
+              </div>
+              <div className="">
+                <img src={randomImage7} />
+              </div>
+            </div>
           </div>
 
           <div style={{ paddingTop: 10 }}>
