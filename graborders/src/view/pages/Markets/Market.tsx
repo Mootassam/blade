@@ -132,9 +132,9 @@ function Market() {
       <div className="advertise__header">
         <video
           height="250px"
-          autoPlay="autoplay"
-          loop="loop"
-          muted="muted"
+          autoPlay={true}
+          loop={true}
+          muted={true}
           className="banner-block"
           style={{ maxWidth: "100%" }}
         >
