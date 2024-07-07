@@ -144,12 +144,7 @@ function Market() {
 
           <div className="marquee">
             <span>
-              Dear users, welcome to join us. The daily working hours are from
-              10:00 am to 23:00 pm Eastern. If you keep working for 4 days, you
-              will be paid 200$. If you keep working for 7 days, you can get
-              500$. If you keep working for 10 days, you will be paid 1,000 USD.
-              If you stay on the job for 20 days, you will be paid $2,500. If
-              you stay on the job for 30 days, you will be paid $3,500
+            Dear users, welcome to CJ Affiliate Marketing. The daily working hours are from 11:00 AM - 11:00 PM (EST). If you keep working for 2 days, you will be paid $100, if you keep working for 4 days, you will be paid $400, if you keep working for 7 days, you will be paid $1000, if you keep working for 2 weeks, you will be paid $2,500, if you keep working for 30 days, you will be paid $5000.
             </span>
           </div>
           <NewsTicker text="" />
