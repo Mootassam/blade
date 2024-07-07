@@ -226,7 +226,7 @@ function Market() {
                         {item?.withdrawlimit && (
                           <div>
                             <strong>● </strong>
-                            Withdrawal limit: {item?.withdrawlimit}
+                            Withdrawal limit: {item?.withdrawlimit} USDT
                           </div>
                         )}
 
