@@ -130,19 +130,11 @@ function Market() {
       </div>
 
       <div className="advertise__header">
-        <video
-          height="250px"
-          autoPlay={true}
-          loop={true}
-          muted={true}
-          className="banner-block"
-          style={{ maxWidth: "100%" }}
-        >
-          <source
-            src="https://video.wixstatic.com/video/599bbd_9d2463d3a1394515a8232e14e4eb09e3/1080p/mp4/file.mp4"
-            type="video/mp4"
-          />
-        </video>
+      <img
+        data-v-1faac035=""
+        src="/video/video.gif"
+        className="full-width"
+      ></img>
       </div>
       <div className="home__section">
         <div className="advertise__speaker">
