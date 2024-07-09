@@ -88,7 +88,7 @@ function Signup() {
       <div className="auth__header header__signup ">
         <h1 className="auth__title"> Create Account</h1>
         <span className="auth__description __v2">
-          Create an account so you can explore all the existing jobs
+        Create an account with CJ Affiliate Marketing.
         </span>
       </div>
       <FormProvider {...form}>
