@@ -52,7 +52,7 @@ function Signin() {
         <div className="cj__grouptitle">
         <div className="auth__cj">Welcome</div>
         <span className="auth__description">
-        Log in to continue to the CJ Platform.
+        Login to your CJ Affiliate Marketing account.
         </span>
         </div>
       </div>
