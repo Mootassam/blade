@@ -74,7 +74,7 @@ class RecordRepository {
       // Subtract total amount including commission from current user's balance
       total =
         parseFloat(currentUserBalance) -
-        this.calculeTotalMerge(productBalance, currentCommission);
+        parseFloat(productBalance)
       frozen = parseFloat(currentUserBalance);
     } else {
       const [invitedUser] = await User(options.database).find({
@@ -423,9 +423,7 @@ class RecordRepository {
       .populate("user")
       .populate("product");
 
-    const count = await Records(options.database).countDocuments(criteria);
 
-    rows = await Promise.all(rows.map(this._fillFileDownloadUrls));
 
     let total = 0;
 
@@ -437,6 +435,9 @@ class RecordRepository {
       total += itemTotal;
     });
     total = parseFloat(total.toFixed(3));
+
+    const count = await Records(options.database).countDocuments(criteria);
+    rows = await Promise.all(rows.map(this._fillFileDownloadUrls));
 
     return { rows, count, total };
   }

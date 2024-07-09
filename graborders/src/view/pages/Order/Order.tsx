@@ -60,7 +60,9 @@ function Portfolio() {
           </div>
           <div className="product__image">
             <div className="image__">
+            {item?.product && item?.product.photo[0]?.downloadUrl && ( 
               <img src={item?.product?.photo[0]?.downloadUrl} alt="" />
+            )}
             </div>
             <div className="product__detail">
               <div className="detail__name">{item?.product?.title}</div>

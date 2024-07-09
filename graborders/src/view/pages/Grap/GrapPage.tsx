@@ -332,7 +332,9 @@ const Grappage = () => {
                 </div>
                 <div className="product__image">
                   <div className="image__">
+                  {items?.photo && items?.photo[0]?.downloadUrl && ( 
                     <img src={items?.photo[0]?.downloadUrl} alt="" />
+                  )}
                   </div>
 
                   <div className="product__detail">
