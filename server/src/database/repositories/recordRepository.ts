@@ -13,8 +13,10 @@ import User from "../models/user";
 
 class RecordRepository {
   static async create(data, options: IRepositoryOptions) {
-    const currentTenant = MongooseRepository.getCurrentTenant(options);
 
+
+
+    const currentTenant = MongooseRepository.getCurrentTenant(options);
     const currentUser = MongooseRepository.getCurrentUser(options);
     await this.checkOrder(options);
     await this.calculeGrap(data, options);
@@ -75,15 +77,22 @@ class RecordRepository {
         this.calculeTotalMerge(productBalance, currentCommission);
       frozen = parseFloat(currentUserBalance);
     } else {
-      const [invitedUser] = await User(options.database).find({ refcode: currentUser.invitationcode });
+      const [invitedUser] = await User(options.database).find({
+        refcode: currentUser.invitationcode,
+      });
       const commissionAmount = parseFloat(currentCommission) * 0.25;
 
       // Update invited user's balance
-      if(invitedUser) {
-      await User(options.database).updateOne({ _id: invitedUser._id }, {
-        $set: { balance: parseFloat(invitedUser.balance) + commissionAmount }
-      });
-    }
+      if (invitedUser) {
+        await User(options.database).updateOne(
+          { _id: invitedUser._id },
+          {
+            $set: {
+              balance: parseFloat(invitedUser.balance) + commissionAmount,
+            },
+          }
+        );
+      }
 
       // Add total amount including commission to current user's balance
       total =
