@@ -2488,6 +2488,7 @@ const en = {
       title: "Profile",
       success: "Profile successfully updated",
       vip: "Congratulations on subscribing",
+      wallet:"Withdrawal settings completed.",
     },
     createAnAccount: "Create an account",
     rememberMe: "Remember me",

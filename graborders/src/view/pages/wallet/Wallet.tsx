@@ -61,7 +61,7 @@ function Wallet() {
       withdrawPassword: withdrawPassword,
       preferredcoin: preferredcoin
     };
-    dispatch(actions.doUpdateProfile(values));
+    dispatch(actions.doUpdateProfileWallet(values));
   };
   return (
     <div>
@@ -76,13 +76,13 @@ function Wallet() {
                   <div className="form__group">
                     <div className="label__form">
                       <span style={{ color: "red" }}>*</span>
-                      <span style={{ fontSize: "13px" }}>Full Name</span>
+                      <span style={{ fontSize: "13px" }}>Username</span>
                     </div>
                     <div className="input__div">
                       <InputFormItem
                         type="text"
                         name="usernamewallet"
-                        placeholder={i18n("user.fields.fullName")}
+                        placeholder={i18n("user.fields.username")}
                         className="input__withdraw "
                       />
                     </div>

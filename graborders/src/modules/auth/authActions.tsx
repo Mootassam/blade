@@ -226,6 +226,29 @@ const authActions = {
     }
   },
 
+
+  doUpdateProfileWallet: (data) => async (dispatch) => {
+    try {
+      dispatch({
+        type: authActions.UPDATE_PROFILE_START,
+      });
+
+      await service.updateProfile(data);
+
+      dispatch({
+        type: authActions.UPDATE_PROFILE_SUCCESS,
+      });
+      await dispatch(authActions.doRefreshCurrentUser());
+      Message.success(i18n("auth.profile.wallet"));
+      getHistory().push("/");
+    } catch (error) {
+      Errors.handle(error);
+      dispatch({
+        type: authActions.UPDATE_PROFILE_ERROR,
+      });
+    }
+  },
+
   doUpdateProfileMobile: (data) => async (dispatch) => {
     try {
       dispatch({
