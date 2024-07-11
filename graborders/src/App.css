@@ -904,6 +904,7 @@ li {
 }
 
 .contact__online {
+  height: max-content;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -1688,6 +1689,7 @@ button:disabled {
 .customer__image {
   border-radius: 0px !important;
   height: auto;
+  height: 200px;
 }
 .header__left {
   display: flex;
