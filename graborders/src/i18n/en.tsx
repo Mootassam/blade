@@ -2623,7 +2623,7 @@ const en = {
 
     enumerators: {
       status: {
-        Trc20: "USDT",
+        USDT: "USDT",
         ETH: "ETH",
         BTC: "BTC",
 
