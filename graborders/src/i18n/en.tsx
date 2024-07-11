@@ -2406,7 +2406,7 @@ const en = {
         status: "Status",
         subject: "Subject",
         item: "Item",
-        user: "User",
+         "User",
         createdAt: "Created at",
         updatedAt: "Updated at",
         createdAtRange: "Created at",
@@ -2619,6 +2619,15 @@ const en = {
       invited: "Invited",
       "empty-permissions": "Waiting for Permissions",
       inactive: "Inactive",
+    },
+
+    enumerators: {
+      status: {
+        Trc20: "USDT",
+        ETH: "ETH",
+        BTC: "BTC",
+
+      },
     },
     invite: "Invite",
     validations: {
