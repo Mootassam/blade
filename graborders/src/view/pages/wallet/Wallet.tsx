@@ -9,13 +9,22 @@ import { useDispatch, useSelector } from "react-redux";
 import actions from "src/modules/auth/authActions";
 import InputFormItem from "src/shared/form/InputFormItem";
 import selector from "src/modules/auth/authSelectors";
+import SelectFormItem from "src/shared/form/SelectFormItem";
+import userEnumerators from "src/modules/user/userEnumerators";
 const schema = yup.object().shape({
-  trc20: yupFormSchemas.string(i18n("user.fields.trc20"), {
+  preferredcoin: yupFormSchemas.enumerator(i18n("user.fields.status"), {
+    options: userEnumerators.wallet,
     required: true,
   }),
-  erc20: yupFormSchemas.string(i18n("user.fields.erc20"), {
+  trc20: yupFormSchemas.string(i18n("user.fields.walletAddress"), {
     required: true,
   }),
+  withdrawPassword: yupFormSchemas.string(
+    i18n("user.fields.withdrawPassword"),
+    {
+      required: true,
+    }
+  ),
 });
 function Wallet() {
   const dispatch = useDispatch();
@@ -24,10 +33,11 @@ function Wallet() {
   const [initialValues] = useState(() => {
     return {
       trc20: "" || currentUser.trc20,
-      erc20: "" || currentUser.erc20,
+      // withdrawPassword: "" || currentUser.withdrawPassword,
       walletname: "" || currentUser.walletname,
       usernamewallet: "" || currentUser.usernamewallet,
-      balance : currentUser?.balance
+      balance: currentUser?.balance,
+      preferredcoin: currentUser?.preferredcoin
     };
   });
   const form = useForm({
@@ -35,13 +45,21 @@ function Wallet() {
     mode: "onSubmit",
     defaultValues: initialValues,
   });
-  const onSubmit = ({ erc20, trc20, walletname, usernamewallet }) => {
+  const onSubmit = ({
+    preferredcoin,
+    withdrawPassword,
+    trc20,
+    walletname,
+    usernamewallet,
+  }) => {
+
     const values = {
-      erc20: erc20,
       trc20: trc20,
       walletname: walletname,
       usernamewallet: usernamewallet,
-      balance:currentUser.balance
+      balance: currentUser?.balance,
+      withdrawPassword: withdrawPassword,
+      preferredcoin: preferredcoin
     };
     dispatch(actions.doUpdateProfile(values));
   };
@@ -58,17 +76,18 @@ function Wallet() {
                   <div className="form__group">
                     <div className="label__form">
                       <span style={{ color: "red" }}>*</span>
-                      <span style={{ fontSize: "13px" }}>Username</span>
+                      <span style={{ fontSize: "13px" }}>Full Name</span>
                     </div>
                     <div className="input__div">
                       <InputFormItem
                         type="text"
                         name="usernamewallet"
-                        placeholder={i18n("user.fields.username")}
-                        className="input__"
+                        placeholder={i18n("user.fields.fullName")}
+                        className="input__withdraw "
                       />
                     </div>
                   </div>
+
                   <div className="form__group">
                     <div className="label__form">
                       <span style={{ color: "red" }}>*</span>
@@ -79,7 +98,7 @@ function Wallet() {
                         type="text"
                         name="walletname"
                         placeholder={i18n("user.fields.walletName")}
-                        className="input__"
+                        className="input__withdraw"
                       />
                     </div>
                   </div>
@@ -87,43 +106,60 @@ function Wallet() {
                   <div className="form__group">
                     <div className="label__form">
                       <span style={{ color: "red" }}>*</span>
-                      <span style={{ fontSize: "13px" }}>USDT-TRC20</span>
+                      <span style={{ fontSize: "13px" }}>
+                        Choose preferred coin:
+                      </span>
                     </div>
                     <div className="input__div">
-                      <InputFormItem
-                        type="text"
-                        name="erc20"
-                        placeholder={i18n("user.fields.erc20")}
-                        className="input__"
+                      <SelectFormItem
+                        name="preferredcoin"
+                        options={userEnumerators.wallet.map((value) => ({
+                          value,
+                          label: i18n(`user.enumerators.status.${value}`),
+                        }))}
+                        required={true}
                       />
                     </div>
                   </div>
+
                   <div className="form__group">
                     <div className="label__form">
                       <span style={{ color: "red" }}>*</span>
-                      <span style={{ fontSize: "13px" }}>USDT-ERC20</span>
+                      <span style={{ fontSize: "13px" }}>Wallet Address</span>
                     </div>
                     <div className="input__div">
                       <InputFormItem
                         type="text"
                         name="trc20"
-                        placeholder={i18n("user.fields.erc20")}
-                        className="input__"
+                        placeholder={i18n("user.fields.walletAddress")}
+                        className="input__withdraw"
+                      />
+                    </div>
+                  </div>
+                  <div className="form__group">
+                    <div className="label__form">
+                      <span style={{ color: "red" }}>*</span>
+                      <span style={{ fontSize: "13px" }}>
+                        Withdraw Password
+                      </span>
+                    </div>
+                    <div className="input__div">
+                      <InputFormItem
+                        type="password"
+                        name="withdrawPassword"
+                        placeholder={i18n("user.fields.withdrawPassword")}
+                        className="input__withdraw"
                       />
                     </div>
                   </div>
                 </div>
 
-                <button
-                  className="confirm"
-                  type="submit"
-                  disabled={Boolean(currentUser.erc20 && currentUser.trc20)}
-                >
+                <button className="confirm" type="submit">
                   Submit
                 </button>
                 <span style={{ fontSize: 13 }}>
-                  <b>Note:</b> &nbsp; this informations not modified so please
-                  make sure that you fill it correctly
+                  <b>Note:</b> &nbsp; Please be careful when filling out this
+                  information.
                 </span>
               </div>
             </form>
