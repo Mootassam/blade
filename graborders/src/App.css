@@ -2386,7 +2386,7 @@ button:disabled {
 
 .titre__section {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 10px;
 }
 

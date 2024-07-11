@@ -52,7 +52,7 @@ function Withdraw() {
 
   return (
     <div>
-      <SubHeader title="WithDraw" path="/" />
+      <SubHeader title="WithDraw" path="/profile" />
       <div className="withdraw__page">
         <div className="withdraw__content">
           <div className="withdraw__header">

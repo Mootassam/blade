@@ -18,9 +18,6 @@ function Profile() {
   const total = useSelector(selectors.selectTotal);
   const totalperday = useSelector(selectors.selectTotalPerday);
 
-
-
-  
   useEffect(() => {
     const values = {
       status: "completed",
@@ -180,8 +177,8 @@ function Profile() {
               onClick={() => goto("/online")}
             >
               <div className="titre__section">
-                <i className="fa-solid fa-paper-plane" />
-                <span>Deposit</span>
+              <i className="fa-solid fa-dollar-sign"></i>
+                <span>Recharge</span>
               </div>
               <div>
                 <i className="fa fa-arrow-right " />
