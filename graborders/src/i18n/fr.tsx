@@ -69,10 +69,10 @@ const fr = {
         title: "Edit Record"
       },
       create: {
-        success: 'Record successfully saved',
+        success: 'Product submitted successfully.',
       },
       update: {
-        success: 'Record successfully saved',
+        success: 'Product submitted successfully.',
       },
       destroy: {
         success: 'Record successfully deleted',
