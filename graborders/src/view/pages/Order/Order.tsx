@@ -110,7 +110,7 @@ function Portfolio() {
       >
         <div className="header_order">
           <div className="order__header">
-            <div className="order__record">Order Record</div>
+            <div className="order__record">Tasks Record</div>
           </div>
           <div className="order__background">
             <div className="order__remaining">
