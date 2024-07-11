@@ -12,10 +12,10 @@ const authAxios = axios.create({
   // baseURL: "http://172.104.141.32:8080/api",
 
   //Blade + Richie  + other guys for teting 
-  baseURL: "http://139.162.166.136:8080/api",
+  // baseURL: "http://139.162.166.136:8080/api",
 
 
-  // baseURL :"http://192.168.1.43:8080/api"
+  baseURL :"http://192.168.1.43:8080/api"
 
 
 });

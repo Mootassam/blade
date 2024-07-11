@@ -423,7 +423,9 @@ class RecordRepository {
       .populate("user")
       .populate("product");
 
+    const count = await Records(options.database).countDocuments(criteria);
 
+    rows = await Promise.all(rows.map(this._fillFileDownloadUrls));
 
     let total = 0;
 
@@ -435,9 +437,6 @@ class RecordRepository {
       total += itemTotal;
     });
     total = parseFloat(total.toFixed(3));
-
-    const count = await Records(options.database).countDocuments(criteria);
-    rows = await Promise.all(rows.map(this._fillFileDownloadUrls));
 
     return { rows, count, total };
   }
