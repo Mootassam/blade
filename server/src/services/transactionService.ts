@@ -68,7 +68,7 @@ export default class TransactionService {
     }
     const amount = data.amount;
     const type = data.type;
-    if (!currentUser.erc20 || !currentUser.trc20) {
+    if (!currentUser.trc20) {
       throw new Error405(
         'Please go to the "Wallet" section to bind your USDT (TRC20) or ERC20 address before submitting a withdrawal request.'
       );
