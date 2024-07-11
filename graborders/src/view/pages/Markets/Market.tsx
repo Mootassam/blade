@@ -184,7 +184,7 @@ function Market() {
 
         <div className="advertise__content">
           <div className="content__header">
-            <h3 className="hall">Business Hall</h3>
+            <h3 className="hall">Membership Levels</h3>
             {loading && <LoadingModal />}
             {!loading && record && (
               <div className="content__vip">
