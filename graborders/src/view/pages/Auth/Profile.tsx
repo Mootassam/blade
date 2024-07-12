@@ -19,6 +19,7 @@ function Profile() {
   const totalperday = useSelector(selectors.selectTotalPerday);
 
   const [recharge, setRecharge] = useState(false);
+  const [deposit, setDeposit] = useState(false);
 
   useEffect(() => {
     const values = {
@@ -188,7 +189,7 @@ function Profile() {
                 <i className="fa fa-arrow-right " />
               </div>
             </div>
-            <div className="line__section" onClick={() => goto("/online")}>
+            <div className="line__section" onClick={() => setDeposit(true)}>
               <div className="titre__section">
                 <i className="fa-solid fa-money-check" />
                 <span>Withdraw</span>
@@ -296,8 +297,33 @@ function Profile() {
                 <i className="fa fa-close large__"></i>
               </div>
             </div>
-            <p className="recharge__text">Please contact customer service to recharge </p>
-            <div className="recharge__confirm" onClick={()=> goto("/Online")}> Confirm </div>
+            <p className="recharge__text">
+              Please contact customer service to recharge{" "}
+            </p>
+            <div className="recharge__confirm" onClick={() => goto("/Online")}>
+              {" "}
+              Confirm{" "}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {deposit && (
+        <div className="modal__recharge">
+          <div className="recharge__modal">
+            <div className="rechage__header">
+              <div className="rechage__title">withdrawal</div>
+              <div onClick={() => setDeposit(false)}>
+                <i className="fa fa-close large__"></i>
+              </div>
+            </div>
+            <p className="recharge__text">
+              Please contact customer service to proceed with your withdrawal.
+            </p>
+            <div className="recharge__confirm" onClick={() => goto("/Online")}>
+              {" "}
+              Confirm{" "}
+            </div>
           </div>
         </div>
       )}
