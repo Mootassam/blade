@@ -2537,3 +2537,58 @@ button:disabled {
 .white__header {
   background-color: white;
 }
+
+
+.modal__recharge{ 
+  position: absolute;
+  top:50%;
+left:50%; 
+transform: translate(-50% , -50%);
+max-width: 550px;
+margin: auto;
+
+background-color: #025450;
+padding: 20px;
+}
+
+.rechage__header{ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rechage__title { 
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+.large__{ 
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.recharge__text{ 
+  color: white;
+}
+
+.recharge__modal{ 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  gap:20px;
+}
+
+
+.recharge__confirm{ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  background-color: whitesmoke;
+  font-weight: bold;
+  cursor: pointer;
+}

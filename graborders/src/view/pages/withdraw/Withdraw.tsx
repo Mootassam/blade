@@ -105,8 +105,7 @@ function Withdraw() {
           <ul className="rules__list">
             <li>(1) minimum withdraw is 20 USDT</li>
             <li>
-              (2) The payment shall be made with 48 hours after withdrawal
-              application is approved
+              (2)  The payment will be made within the next 1 hour, after withdrawal application has been approved.
             </li>
             <li>
               (3) incomplete daily order submission is subjected to no

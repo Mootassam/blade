@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "../styles/styles.css";
@@ -17,6 +17,8 @@ function Profile() {
   const dispatch = useDispatch();
   const total = useSelector(selectors.selectTotal);
   const totalperday = useSelector(selectors.selectTotalPerday);
+
+  const [recharge, setRecharge] = useState(false);
 
   useEffect(() => {
     const values = {
@@ -100,21 +102,23 @@ function Profile() {
               <div className="left__details">
                 <div className="user__title">{currentUser?.fullName}</div>
                 <div className="small__invitation">
-
                   <div className="invitation__code">
-                  <div className="small__inviation__left">
-                    InvitationCode :
-                    <span ref={referenceCodeRef}> {currentUser?.refcode}</span>
-                  </div>
+                    <div className="small__inviation__left">
+                      InvitationCode :
+                      <span ref={referenceCodeRef}>
+                        {" "}
+                        {currentUser?.refcode}
+                      </span>
+                    </div>
 
-                  <div>
-                  <i
-                    className="fa-regular fa-copy"
-                    onClick={() => copyToClipboardCoupon()}
-                    style={{fontSize:24}}
-                  />
-                </div>
-                </div>
+                    <div>
+                      <i
+                        className="fa-regular fa-copy"
+                        onClick={() => copyToClipboardCoupon()}
+                        style={{ fontSize: 24 }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -174,17 +178,17 @@ function Profile() {
           <div className="detail__section">
             <div
               className="line__section border__"
-              onClick={() => goto("/online")}
+              onClick={() => setRecharge(true)}
             >
               <div className="titre__section">
-              <i className="fa-solid fa-dollar-sign"></i>
+                <i className="fa-solid fa-dollar-sign"></i>
                 <span>Recharge</span>
               </div>
               <div>
                 <i className="fa fa-arrow-right " />
               </div>
             </div>
-            <div className="line__section" onClick={() => goto("/withdraw")}>
+            <div className="line__section" onClick={() => goto("/online")}>
               <div className="titre__section">
                 <i className="fa-solid fa-money-check" />
                 <span>Withdraw</span>
@@ -283,6 +287,20 @@ function Profile() {
         {" "}
         Logout
       </div>
+      {recharge && (
+        <div className="modal__recharge">
+          <div className="recharge__modal">
+            <div className="rechage__header">
+              <div className="rechage__title">Recharge</div>
+              <div onClick={() => setRecharge(false)}>
+                <i className="fa fa-close large__"></i>
+              </div>
+            </div>
+            <p className="recharge__text">Please contact customer service to recharge </p>
+            <div className="recharge__confirm" onClick={()=> goto("/Online")}> Confirm </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

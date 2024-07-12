@@ -568,7 +568,7 @@ class RecordRepository {
     }
     const output = record.toObject ? record.toObject() : record;
     output.product.photo = await FileRepository.fillDownloadUrl(
-      output.product.photo
+      output?.product?.photo
     );
 
     return output;
