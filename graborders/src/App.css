@@ -2541,14 +2541,14 @@ button:disabled {
 
 .modal__recharge{ 
   position: absolute;
-  top:50%;
-left:50%; 
-transform: translate(-50% , -50%);
-max-width: 550px;
-margin: auto;
-
-background-color: #025450;
-padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  margin: auto;
+  background-color: #025450;
+  padding: 20px;
+  width: calc(100% - 10%);
 }
 
 .rechage__header{ 
