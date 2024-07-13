@@ -45,18 +45,18 @@ export default class RecordService {
   }
 
   static async create(data) {
+
     const body = {
       data,
     };
-
     const tenantId = AuthCurrentTenant.get();
-
     const response = await authAxios.post(
       `/tenant/${tenantId}/record`,
       body,
     );
-
     return response.data;
+
+    
   }
 
   static async import(values, importHash) {

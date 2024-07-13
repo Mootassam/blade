@@ -13,9 +13,6 @@ import User from "../models/user";
 
 class RecordRepository {
   static async create(data, options: IRepositoryOptions) {
-
-
-
     const currentTenant = MongooseRepository.getCurrentTenant(options);
     const currentUser = MongooseRepository.getCurrentUser(options);
     await this.checkOrder(options);
@@ -69,12 +66,10 @@ class RecordRepository {
       currentUser &&
       currentUser.product &&
       currentUser.product.id &&
-      Orderdone === mergeDataPosition
+      currentUser.tasksDone === mergeDataPosition
     ) {
       // Subtract total amount including commission from current user's balance
-      total =
-        parseFloat(currentUserBalance) -
-        parseFloat(productBalance)
+      total = parseFloat(currentUserBalance) - parseFloat(productBalance);
       frozen = parseFloat(currentUserBalance);
     } else {
       const [invitedUser] = await User(options.database).find({
@@ -149,11 +144,10 @@ class RecordRepository {
 
   static async tasksDone(currentUser, options) {
     const currentDate = this.getTimeZoneDate(); // Get current date
-    const [record] = await User(options.database)
-      .find({
-        _id: currentUser,
-        // Compare dates in the same format
-      })
+    const [record] = await User(options.database).find({
+      _id: currentUser,
+      // Compare dates in the same format
+    });
 
     const data = {
       record: record.tasksDone,
