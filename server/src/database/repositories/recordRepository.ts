@@ -149,16 +149,14 @@ class RecordRepository {
 
   static async tasksDone(currentUser, options) {
     const currentDate = this.getTimeZoneDate(); // Get current date
-    const record = await Records(options.database)
+    const [record] = await User(options.database)
       .find({
-        user: currentUser,
+        _id: currentUser,
         // Compare dates in the same format
-        datecreation: { $in: Dates.getTimeZoneDate() }, // Convert current date to Date object
       })
-      .countDocuments();
 
     const data = {
-      record: record,
+      record: record.tasksDone,
     };
 
     return data;
