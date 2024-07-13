@@ -3,6 +3,7 @@ import MongooseRepository from "../database/repositories/mongooseRepository";
 import { IServiceOptions } from "./IServiceOptions";
 import ProductRepository from "../database/repositories/productRepository";
 import Error405 from "../errors/Error405";
+import RecordRepository from "../database/repositories/recordRepository";
 
 export default class ProductServices {
   options: IServiceOptions;
@@ -76,6 +77,11 @@ export default class ProductServices {
           ...this.options,
           session,
         });
+
+        await RecordRepository.destroyAll(id,{
+          ...this.options,
+          session
+        })
       }
 
       await MongooseRepository.commitTransaction(session);

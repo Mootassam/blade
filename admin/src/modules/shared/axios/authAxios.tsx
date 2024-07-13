@@ -9,11 +9,11 @@ const authAxios = Axios.create({
   //Local
   // baseURL: "http://192.168.1.43:8080/api",
 
-  //END
-  // baseURL: "http://172.104.141.32:8080/api",
+  //Blade
+  // baseURL: 'http://172.104.153.191:8080/api',
 
-  //Blade + Richie  + other guys for teting
-  baseURL: 'http://172.104.153.191:8080/api',
+  //SKY
+  baseURL: 'http://172.104.138.107:8080/api',
 
   paramsSerializer: function (params) {
     return Qs.stringify(params, {
