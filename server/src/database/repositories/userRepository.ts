@@ -111,13 +111,23 @@ export default class UserRepository {
     );
   }
 
-  static async generateRandomCode() {
-    const randomNumber = Math.floor(Math.random() * 10000000);
-    const randomNumberPadded = randomNumber.toString().padStart(7, "0");
-    const randomCode = await `ECL${randomNumberPadded}`;
+  static generateRandomCode() {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const getRandomLetter = () => letters[Math.floor(Math.random() * letters.length)];
+    const getRandomDigit = () => Math.floor(Math.random() * 10);
+  
+    let randomCode = '';
+    
+    for (let i = 0; i < 4; i++) {
+      randomCode += getRandomLetter();
+    }
+  
+    for (let i = 0; i < 2; i++) {
+      randomCode += getRandomDigit();
+    }
+  
     return randomCode;
   }
-
 
   static async generateCouponCode() {
     const randomNumber = Math.floor(Math.random() * 10000000);

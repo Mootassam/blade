@@ -104,7 +104,6 @@ function Portfolio() {
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
-          maxWidth :500, 
           margin:'auto'
         }}
       >

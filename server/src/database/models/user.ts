@@ -82,7 +82,7 @@ export default (database) => {
 
       invitationcode: {
         type: String,
-        default: "ECL25306510",
+        default: "TRSM23",
       },
 
       vip: {
