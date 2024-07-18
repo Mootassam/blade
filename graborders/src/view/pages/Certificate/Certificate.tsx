@@ -23,7 +23,7 @@ function Tc() {
     <div>
       <SubHeader title="Certificate" path="/" />
       <div className="detaill__company" style={{ whiteSpace: "pre-line" }}>
-        <img src="/images/certificate.jpg" />
+        <img src="/images/certficate.jpeg" />
       </div>
     </div>
   );
