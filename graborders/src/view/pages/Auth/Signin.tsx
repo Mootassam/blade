@@ -88,6 +88,14 @@ function Signin() {
               <span className="auth__link">Don't have an account? <span className="signup__link">Sign up here.</span> </span>
             </Link>
           </div>
+
+
+          <div className="section__contact__us">
+
+          <Link to="/contact-us" className="remove__ligne">
+              <span className="auth__link"><span className="signup__link">Contact-us</span> </span>
+            </Link>
+          </div>
         </form>
       </FormProvider>
 

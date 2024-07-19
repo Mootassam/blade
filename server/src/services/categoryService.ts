@@ -97,6 +97,10 @@ export default class CategoryService {
     return CategoryRepository.findAndCountAll(args, this.options);
   }
 
+  async findcs() { 
+    return CategoryRepository.findCs(this.options);
+  }
+
   async import(data, importHash) {
     if (!importHash) {
       throw new Error400(

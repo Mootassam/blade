@@ -6,6 +6,7 @@ import { IRepositoryOptions } from "./IRepositoryOptions";
 import lodash from "lodash";
 import Category from "../models/category";
 import FileRepository from "./fileRepository";
+import record from "../../api/record";
 
 class CategoryRepository {
   static async create(data, options: IRepositoryOptions) {
@@ -143,6 +144,11 @@ class CategoryRepository {
     return this._mapRelationshipsAndFillDownloadUrl(record);
   }
 
+  static async findCs(options: IRepositoryOptions) {
+    const records = await Category(options.database).find({});
+    return records;
+}
+
   static async findAndCountAll(
     { filter, limit = 0, offset = 0, orderBy = "" },
     options: IRepositoryOptions
@@ -152,9 +158,9 @@ class CategoryRepository {
 
     let criteriaAnd: any = [];
 
-    criteriaAnd.push({
-      tenant: currentTenant.id,
-    });
+    // criteriaAnd.push({
+    //   tenant: currentTenant.id,
+    // });
 
     if (filter) {
       if (filter.id) {

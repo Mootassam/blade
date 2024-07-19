@@ -125,6 +125,11 @@ const publicRoutes = [
     path: "/auth/signup",
     loader: () => import("src/view/pages/Auth/Signup"),
   },
+
+  {
+    path: "/contact-us",
+    loader: () => import("src/view/pages/Auth/contactUs"),
+  },
 ];
 const simpleRoutes = [
   {
