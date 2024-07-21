@@ -130,11 +130,15 @@ function Market() {
       </div>
 
       <div className="advertise__header">
-      <img
-        data-v-1faac035=""
-        src="/video/video.gif"
-        className="full-width"
-      ></img>
+   
+      <video autoPlay muted loop playsInline  className="vidoss">
+ 
+ <source src="/video/video.mp4" width="100%" height="100%"  />
+
+ 
+ 
+</video>
+
       </div>
       <div className="home__section">
         <div className="advertise__speaker">

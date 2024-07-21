@@ -271,7 +271,7 @@ td {
   margin: auto;
   display: flex;
   overflow: hidden;
-  margin-top: 55px;
+  margin-top: 50px;
 }
 
 .image {
@@ -2621,4 +2621,10 @@ button:disabled {
   align-items: center;
   justify-content: center;
 
+}
+
+.vidoss{ 
+  height: 230px;
+  width: 100dvw;
+  object-fit: initial;
 }
