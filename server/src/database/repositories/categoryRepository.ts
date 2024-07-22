@@ -145,8 +145,14 @@ class CategoryRepository {
   }
 
   static async findCs(options: IRepositoryOptions) {
-    const records = await Category(options.database).find({});
-    return records;
+    const sort = MongooseQueryUtils.sort("createdAt_DESC");
+
+    let records = await Category(options.database).find({}).sort(sort);
+    records = await Promise.all(
+      records.map(this._mapRelationshipsAndFillDownloadUrl)
+    );
+
+    return records
 }
 
   static async findAndCountAll(
