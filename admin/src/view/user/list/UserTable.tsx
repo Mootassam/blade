@@ -165,6 +165,10 @@ function UserTable() {
                   className="text-center"
                   label={i18n('user.fields.currentrecord')}
                 />
+                  <TableColumnHeader
+                  className="text-center"
+                  label={i18n('Reset Password')}
+                />
                 <TableColumnHeader className="th-actions" />
               </tr>
             </thead>
@@ -251,6 +255,17 @@ function UserTable() {
                       </button>
                     </td>
 
+                    <td>
+                    <Link
+                          className="btn btn-link"
+                          to={`/password-reset/${row.id}`}
+                        >
+                         
+                      <button>
+                        Reset Password
+                      </button>
+                      </Link>
+                    </td>
                     <td className="td-actions">
                       <Link
                         className="btn btn-link"

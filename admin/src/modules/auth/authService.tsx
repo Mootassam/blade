@@ -105,6 +105,21 @@ export default class AuthService {
     return response.data;
   }
 
+
+  static async resetPasswprd(userId, newPassword) {
+    const body = {
+      userId,
+      newPassword,
+    };
+
+    const response = await authAxios.put(
+      '/auth/password-reset',
+      body,
+    );
+
+    return response.data;
+  }
+
   static async passwordReset(token, password) {
     const response = await authAxios.put(
       '/auth/password-reset',

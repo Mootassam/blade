@@ -10,8 +10,6 @@ import { isUserInTenant } from "../utils/userTenantUtils";
 import { IRepositoryOptions } from "./IRepositoryOptions";
 import lodash from "lodash";
 import Error405 from "../../errors/Error405";
-import product from "../models/product";
-import VipRepository from "./vipRepository";
 import Vip from "../models/vip";
 export default class UserRepository {
   static async create(data, options: IRepositoryOptions) {

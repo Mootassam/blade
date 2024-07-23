@@ -306,6 +306,14 @@ const privateRoutes = [
   },
 
   {
+    path: '/password-reset/:id',
+    loader: () =>
+      import('src/view/auth/PasswordReset'),
+    permissionRequired: permissions.categoryRead,
+    exact: true,
+  },
+
+  {
     path: '/tenant',
     loader: () =>
       import('src/view/tenant/list/TenantListPage'),
